@@ -1,0 +1,287 @@
+/* Global */
+:root {
+    --orange-color: #E8491D;
+    --black-color: #35424E;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+html, body {
+    /* font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    line-height: 1.5; 
+    equals to 
+    */
+    height: 100vh;
+    font: 15px / 1.5 Arial, Helvetica, sans-serif;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+
+input:focus {
+    outline: none;
+}
+
+
+.icon {
+    font-size: 100px;
+}
+
+.box:first-of-type .icon {
+    color: tomato;
+}
+
+.box:nth-of-type(2) .icon {
+    color: rgb(99, 99, 243);
+}
+
+.box:last-of-type .icon {
+    color: rgba(50, 196, 50, 0.652);
+}
+
+.main-container {
+    min-height: max-content;
+    height: 100%;
+    width: 100%;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    color: white;
+}
+
+/* header */
+
+.header {
+    background-color: var(--black-color);
+    border-bottom: 3px var(--orange-color) solid;
+    min-height: 80px;
+
+    display: flex;
+}
+
+.header a {
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.logo, nav {
+    width: 50%;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    justify-content: center;
+}
+
+.logo h1 span {
+    color: var(--orange-color);
+}
+
+.logo h1 {
+    color: white;
+}
+
+.header .nav-menu-container {
+    display: flex;
+    width: 70%;
+    justify-content: space-between;
+}
+
+.showcase {
+    background-image: url('https://images.pexels.com/photos/777001/pexels-photo-777001.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    min-height: 70%;
+    width: 100%;
+    /* background-attachment: fixed; */
+}
+
+.showcase .container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.showcase .container h1 {
+    padding: 0 0 .3em 0;
+}
+
+.newsletter {
+    display: flex;
+    background-color: #35424E;
+    min-height: 80px;
+    width: 100%;
+}
+
+.newsletter .container {
+    align-items: center;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.newsletter .container h1 {
+    display: flex;
+    flex-shrink: 2;
+}
+
+.newsletter form {
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-end;
+}
+
+form .button_1, 
+form input  {
+    padding: .7rem;
+    border: none;
+}
+
+form .button_1 {
+    background-color: var(--orange-color);
+    color: white;
+}
+
+.boxes {
+    display: flex;
+    min-height: 45%;
+    height: 45%;
+    width: 100%;
+}
+
+.boxes .container {
+    height: 70%;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);      
+    justify-content: center;/*eje x*/
+    gap: 1rem;
+}
+
+.boxes .container .box {
+    align-items: center;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.boxes .container .box h3 {
+    font-weight: bold;
+}
+
+.boxes .container .box p{
+    text-align: center;
+}
+
+.footer {
+    background-color: var(--orange-color);
+    color: white;
+    display: flex;
+    height: 10%;
+
+    align-items: center;
+    justify-content: center;
+}
+
+
+@media screen and (max-width: 750px) {
+   
+    /* Global */
+    
+    .header .logo h1, .showcase h1, .newsletter .container h1 {
+        text-align: center;
+        font-size: 1.5rem;
+    }
+
+    .footer p {
+        font-size: .7rem;
+    }
+
+    .main-container {
+        height: 100%;
+    }
+
+    /* Header */
+    
+    .header {
+        align-items: center;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .nav {
+        margin: auto;
+    }
+
+    .nav .nav-menu-container {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav .nav-menu-container li {
+        padding: 1rem 0;
+    }
+
+    /* Showcase */
+
+    .showcase {
+        background-size: 100% 100%;
+        height: 100%;
+    }
+
+    .showcase .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    .showcase h1, .showcase p {
+        text-align: center;
+    }
+
+    /* Newsletter */
+
+    .newsletter .container {
+        flex-direction: column;
+        padding: 1rem 0;
+    }
+
+    .newsletter .container form {
+        padding: 1rem 0;
+    }
+
+    /* boxes */
+
+    .boxes {
+        height: auto;
+    }
+
+    .boxes .container {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+}
